@@ -18,14 +18,6 @@ from feast.protos.feast.serving.ServingService_pb2 import GetOnlineFeaturesReque
 
 if os.environ.get('ENABLE_DATADOG') == 'true':
     try:
-        # from google.api_core import client_info as http_client_info
-        # from google.api_core.exceptions import NotFound
-        # from google.auth.exceptions import DefaultCredentialsError
-        # from google.cloud import bigquery
-        # from google.cloud.bigquery import Client, SchemaField, Table
-        # from google.cloud.bigquery._pandas_helpers import ARROW_SCALAR_IDS_TO_BQ
-        # from google.cloud.storage import Client as StorageClient
-
         print("datadog_enabled")
         from ddtrace import patch
         patch(fastapi=True)
